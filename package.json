@@ -1,0 +1,30 @@
+{
+  "name": "template-vue-seed",
+  "version": "1.0.0",
+  "description": "template-vue-seed",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --config ./build/webpack.dev.conf.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yang657850144/template-vue-seed.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yang657850144/template-vue-seed/issues"
+  },
+  "homepage": "https://github.com/yang657850144/template-vue-seed#readme",
+  "devDependencies": {
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
+  },
+  "dependencies": {
+    "html-webpack-plugin": "^3.2.0",
+    "vue": "^2.6.9",
+    "vue-loader": "^15.7.0"
+  }
+}
