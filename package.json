@@ -18,13 +18,17 @@
   },
   "homepage": "https://github.com/yang657850144/template-vue-seed#readme",
   "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "babel-loader": "^8.0.5",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.9",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
     "html-webpack-plugin": "^3.2.0",
-    "vue": "^2.6.9",
-    "vue-loader": "^15.7.0"
+    "mockjs": "^1.0.1-beta3",
+    "vue": "^2.6.9"
   }
 }
