@@ -1,5 +1,5 @@
 {
-  "name": "template-vue-seed",
+  "name": "shopping-mall",
   "version": "1.0.0",
   "description": "template-vue-seed",
   "main": "index.js",
@@ -17,16 +17,42 @@
     "url": "https://github.com/yang657850144/template-vue-seed/issues"
   },
   "homepage": "https://github.com/yang657850144/template-vue-seed#readme",
+  "eslintConfig": {
+    "extends": "@fetp/eslint-config-fetp",
+    "rules": {
+      "no-console": "off"
+    }
+  },
+  "eslintIgnore": [],
   "devDependencies": {
     "@babel/core": "^7.4.0",
+    "autoprefixer": "^9.5.1",
+    "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.1",
+    "eslint": "^5.16.0",
+    "eslint-config-recommended": "^4.0.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-formatter-friendly": "^6.0.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^5.2.2",
+    "node-sass": "^4.11.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-pxtorem": "^4.0.1",
+    "sass-loader": "^7.1.0",
     "vue-loader": "^15.7.0",
+    "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.6.9",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
+    "@fetp/eslint-config-fetp": "0.0.3",
     "html-webpack-plugin": "^3.2.0",
     "mockjs": "^1.0.1-beta3",
     "vue": "^2.6.9"

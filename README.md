@@ -1,5 +1,4 @@
-# template-vue-seed
-
+# shopping-mall
 
 ## install
 

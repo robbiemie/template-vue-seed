@@ -1,14 +1,18 @@
 <template>
   <div>
-    123
+    <Header/>
   </div>
 </template>
 
 <script>
-
+import Header from '@/module/Header.vue'
 import Mock from 'mockjs'
+
 export default {
   name: 'app',
+  components: {
+    Header
+  },
   mounted () {
     const data = Mock.mock({
       'list|1-10': [{
