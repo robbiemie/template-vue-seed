@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --config ./build/webpack.dev.conf.js",
+    "build": "webpack-dev-server --config ./build/webpack.prod.conf.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -55,6 +56,7 @@
     "@fetp/eslint-config-fetp": "0.0.3",
     "html-webpack-plugin": "^3.2.0",
     "mockjs": "^1.0.1-beta3",
+    "serviceworker-webpack-plugins": "file:../serviceworker-webpack-plugins",
     "vue": "^2.6.9"
   }
 }
