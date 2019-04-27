@@ -4,24 +4,29 @@ const { VueLoaderPlugin } = require('vue-loader')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const friendlyFormatter = require('eslint-formatter-friendly')
 const ServiceworkerPlugins = require('serviceworker-webpack-plugins')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 const cwd = process.cwd()
 const rootPath = resolve(cwd, './')
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: {
     index: resolve(__dirname, '../src/index.js')
+  },
+  output: {
+    filename: 'index.js',
+    path: resolve(__dirname, '../dist')
   },
   resolve: {
     alias: {
       '@': resolve(rootPath, './src'), // for .(js|vue)
       '~@': resolve(rootPath, './src'), // for .css
       'vue': 'vue/dist/vue.esm.js'
-    }
+    },
+    extensions: ['.js', '.vue', '.scss']
   },
-  output: {
-    filename: '[name].bundle.js',
-    path: resolve(__dirname, '../dist')
+  externals: {
+    vue: 'vue'
   },
   module: {
     rules: [
@@ -72,15 +77,13 @@ module.exports = {
       }
     ]
   },
-  devServer: {
-    hot: true,
-    open: false,
-    quiet: false,
-    port: 4000
-  },
   plugins: [
     new VueLoaderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
+    new CleanWebpackPlugin(),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production')
+    }),
+    new webpack.HashedModuleIdsPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: resolve(__dirname, '../src/html/index.html')

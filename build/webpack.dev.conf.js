@@ -3,7 +3,6 @@ const { resolve } = require('path')
 const { VueLoaderPlugin } = require('vue-loader')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const friendlyFormatter = require('eslint-formatter-friendly')
-const ServiceworkerPlugins = require('serviceworker-webpack-plugins')
 const cwd = process.cwd()
 const rootPath = resolve(cwd, './')
 
@@ -84,11 +83,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: resolve(__dirname, '../src/html/index.html')
-    }),
-    new ServiceworkerPlugins({
-      entry: 'sw', // [PATH] use local sw.js
-      excludes: [], // [PATH] exclude cacheFiles path
-      filename: 'sw' // [NAME] rename ouput sw.js filename
     })
   ]
 }
