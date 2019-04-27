@@ -8,5 +8,13 @@
 </head>
 <body>
 <div id="app"></div>
+<script async>
+  let script = document.createElement('script')
+  let el = document.body.getElementsByTagName('script')[0]
+  script.async = true
+  script.src = `./sw-register.js?v=${Date.now()}`
+  el.parentNode.insertBefore(script,el)
+</script>
+
 </body>
 </html>

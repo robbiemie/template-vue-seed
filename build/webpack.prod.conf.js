@@ -2,7 +2,7 @@ const webpack = require('webpack')
 const { resolve } = require('path')
 const { VueLoaderPlugin } = require('vue-loader')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const friendlyFormatter = require('eslint-formatter-friendly')
+// const friendlyFormatter = require('eslint-formatter-friendly')
 const ServiceworkerPlugins = require('serviceworker-webpack-plugins')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const cwd = process.cwd()
@@ -30,18 +30,6 @@ module.exports = {
   },
   module: {
     rules: [
-
-      {
-        enforce: 'pre', // 预处理
-        test: /\.(jsx?|vue)$/,
-        exclude: /node_modules/,
-        use: [{
-          loader: 'eslint-loader',
-          options: {
-            formatter: friendlyFormatter
-          }
-        }]
-      },
       {
         test: /\.vue$/,
         loader: 'vue-loader'
@@ -89,9 +77,17 @@ module.exports = {
       template: resolve(__dirname, '../src/html/index.html')
     }),
     new ServiceworkerPlugins({
-      entry: 'sw', // [PATH] use local sw.js
-      excludes: [], // [PATH] exclude cacheFiles path
-      filename: 'sw' // [NAME] rename ouput sw.js filename
+      entry: {
+        sw: {
+          filename: 'sw.js',
+          path: ''
+        },
+        register: {
+          filename: 'sw-register.js',
+          path: ''
+        }
+      },
+      include: [] // [PATH] exclude cacheFiles path
     })
   ]
 }
